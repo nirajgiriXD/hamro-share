@@ -7,6 +7,7 @@ const stealthPlugin = require("puppeteer-extra-plugin-stealth");
 /**
  * Internal dependencies.
  */
+const { usersData } = require("./data/usersData");
 const { login, apply } = require("./utilities");
 
 const start = async () => {
@@ -16,21 +17,23 @@ const start = async () => {
   });
   const page = await browser.newPage();
 
-  /**
-   * Login Process.
-   */
-  await login(page);
+  for (const userData of usersData) {
+    /**
+     * Login Process.
+     */
+    await login(page, userData);
 
-  // Wait for navigation to complete
-  await page.waitForNavigation();
+    // Wait for navigation to complete
+    await page.waitForNavigation();
 
-  // Wait for the search results page to load.
-  await page.waitForSelector("i.msi-asba");
+    // Wait for the search results page to load.
+    await page.waitForSelector("i.msi-asba");
 
-  /**
-   * Apply for IPO process.
-   */
-  await apply(page);
+    /**
+     * Apply for IPO process.
+     */
+    await apply(page, userData);
+  }
 
   // Close browser.
   // await browser.close();

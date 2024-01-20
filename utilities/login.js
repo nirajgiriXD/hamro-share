@@ -1,9 +1,4 @@
-/**
- * Internal dependencies.
- */
-const { userData } = require("../data/userData");
-
-const login = async (page) => {
+const login = async (page, userData) => {
   // Go to the login page.
   await page.goto("https://meroshare.cdsc.com.np/#/login", {
     waitUntil: "networkidle2",
