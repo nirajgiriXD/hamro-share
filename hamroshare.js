@@ -7,8 +7,9 @@ const stealthPlugin = require("puppeteer-extra-plugin-stealth");
 /**
  * Internal dependencies.
  */
+const { login, apply, logout } = require("./utilities");
 const { usersData } = require("./data/usersData");
-const { login, apply } = require("./utilities");
+const { applicableCompanies } = require("./data/applicableCompanies");
 
 const start = async () => {
   puppeteer.use(stealthPlugin());
@@ -16,6 +17,11 @@ const start = async () => {
     headless: false,
   });
   const page = await browser.newPage();
+
+  // Go to the login page.
+  await page.goto("https://meroshare.cdsc.com.np/#/login", {
+    waitUntil: "networkidle2",
+  });
 
   for (const userData of usersData) {
     /**
@@ -32,11 +38,16 @@ const start = async () => {
     /**
      * Apply for IPO process.
      */
-    await apply(page, userData);
+    await apply(page, userData, applicableCompanies);
+
+    /**
+     * Logout Process.
+     */
+    await logout(page);
   }
 
   // Close browser.
-  // await browser.close();
+  await browser.close();
 };
 
 start();
