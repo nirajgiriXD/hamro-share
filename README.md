@@ -15,18 +15,21 @@
 ## Getting Started
 
 1. **Clone the Repository:**
+
    ```bash
-   git clone https://github.com/your-username/hamroshare.git
+   git clone https://github.com/nirajgiriXD/hamroshare.git
    cd hamroshare
    ```
 
-2. **Install Dependencies:** 
+2. **Install Dependencies:**
+
    ```bash
    npm install
    ```
 
 3. **Configure User Data:**
-  - Provide user data for single or multiple users in the specified format.
+
+- Provide user data for single or multiple users in the specified format.
 
 4. **Run the Application:**
    ```bash
