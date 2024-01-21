@@ -1,8 +1,8 @@
-# Hamroshare
+# Hamro Share
 
 ## Overview
 
-**Hamroshare** is a `Node.js` application that leverages `Puppeteer` to simplify the process of filling Initial Public Offerings (IPOs) on the [Mero Share](https://meroshare.cdsc.com.np/) website. Instead of applying IPOs of each of your family members one by one, now you can apply IPOs in bulk by using this application. With just one click, users can swiftly navigate through the IPO submission process, reducing the manual effort and time required for each submission.
+**Hamro Share** is a `Node.js` application that leverages `Puppeteer` to simplify the process of filling Initial Public Offerings (IPOs) on the [Mero Share](https://meroshare.cdsc.com.np/) website. Instead of applying IPOs of each of your family members one by one, now you can apply IPOs in bulk by using this application. With just one click, users can swiftly navigate through the IPO submission process, reducing the manual effort and time required for each submission.
 
 ## Features
 
@@ -17,8 +17,8 @@
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/nirajgiriXD/hamroshare.git
-   cd hamroshare
+   git clone https://github.com/nirajgiriXD/hamro-share.git
+   cd hamro-share
    ```
 
 2. **Install Dependencies:**
@@ -33,7 +33,7 @@
 
 4. **Run the Application:**
    ```bash
-   node hamroshare.js
+   node hamro-share.js
    ```
 
 ## Usage
