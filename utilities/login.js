@@ -1,9 +1,4 @@
 const login = async (page, userData) => {
-  // Go to the login page.
-  await page.goto("https://meroshare.cdsc.com.np/#/login", {
-    waitUntil: "networkidle2",
-  });
-
   // Wait for the page to load.
   await page.waitForSelector('button[type="submit"]');
 
